@@ -16,7 +16,7 @@ public class CalculatorServiceTest {
 
     @Test
     public void testCalculateAddition() throws Exception {
-        Calculation calculation = new Addition();
+        Calculation calculation = (i1, i2) -> i1 + i2;
 
         final int actual = calculation.calculate(1, 1);
 

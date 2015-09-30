@@ -23,7 +23,8 @@ public class OopAndFpAnotherExamples {
         System.out.println(divisionResult);
 
         final FpCalculatorService fpCalculatorService = new FpCalculatorService();
-        System.out.println("      addition: " + fpCalculatorService.calculate((i1, i2) -> i1 + i2, 11, 4));
+        final Calculation addition = (i1, i2) -> i1 + i2;
+        System.out.println("      addition: " + fpCalculatorService.calculate(addition, 11, 4));
         System.out.println("   Subtraction: " + fpCalculatorService.calculate((i1, i2) -> i1 - i2, 11, 2));
         System.out.println("Multiplication: " + fpCalculatorService.calculate((i1, i2) -> i1 * i2, 11, 2));
         System.out.println("      Division: " + fpCalculatorService.calculate((i1, i2) -> i1 / i2, 20, 4));
