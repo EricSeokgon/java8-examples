@@ -7,20 +7,26 @@
  * Note:
  * To change this template use File | Settings | File Templates.
  */
-public class OopAnotherExample {
+public class OopAndFpAnotherExamples {
     public static void main(String[] args) {
         final CalculatorService calculatorService = new CalculatorService(new Addition(), new Subtraction());
-        final int additionResult = calculatorService.calculate(1, 1);
+        final int additionResult = calculatorService.calculate(11, 4);
         System.out.println(additionResult);
 
-        final int subtractionResult = calculatorService.calculate(1, 1);
+        final int subtractionResult = calculatorService.calculate(11, 1);
         System.out.println(subtractionResult);
 
-        final int multiplicactionResult = calculatorService.calculate(1, 1);
+        final int multiplicactionResult = calculatorService.calculate(11, 2);
         System.out.println(multiplicactionResult);
 
-        final int divisionResult = calculatorService.calculate(8, 4);
+        final int divisionResult = calculatorService.calculate(20, 4);
         System.out.println(divisionResult);
+
+        final FpCalculatorService fpCalculatorService = new FpCalculatorService();
+        System.out.println("      addition: " + fpCalculatorService.calculate(new Addition(), 11, 4));
+        System.out.println("   Subtraction: " + fpCalculatorService.calculate(new Subtraction(), 11, 2));
+        System.out.println("Multiplication: " + fpCalculatorService.calculate(new Multiplication(), 11, 2));
+        System.out.println("      Division: " + fpCalculatorService.calculate(new Division(), 20, 4));
     }
 }
 
@@ -76,6 +82,7 @@ class CalculatorService {
             throw new IllegalArgumentException("Invalid input num1: " + num1 + ", num2: " + num2);
         }
     }
+
     public int compute(int num1, int num2) {
         if (num1 > 10 && num2 < num1) {
             return calculation2.calculate(num1, num2);
@@ -84,3 +91,13 @@ class CalculatorService {
         }
     }
 }
+    class FpCalculatorService {
+        public int calculate(Calculation calculation, int num1, int num2) {
+            if (num1 > 10 && num2 < num1) {
+                return calculation.calculate(num1, num2);
+            } else {
+                throw new IllegalArgumentException("Invalid input num1: " + num1 + ", num2: " + num2);
+            }
+        }
+   }
+
