@@ -23,10 +23,11 @@ public class OopAndFpAnotherExamples {
         System.out.println(divisionResult);
 
         final FpCalculatorService fpCalculatorService = new FpCalculatorService();
-        System.out.println("      addition: " + fpCalculatorService.calculate(new Addition(), 11, 4));
-        System.out.println("   Subtraction: " + fpCalculatorService.calculate(new Subtraction(), 11, 2));
-        System.out.println("Multiplication: " + fpCalculatorService.calculate(new Multiplication(), 11, 2));
-        System.out.println("      Division: " + fpCalculatorService.calculate(new Division(), 20, 4));
+        System.out.println("      addition: " + fpCalculatorService.calculate((i1, i2) -> i1 + i2, 11, 4));
+        System.out.println("   Subtraction: " + fpCalculatorService.calculate((i1, i2) -> i1 - i2, 11, 2));
+        System.out.println("Multiplication: " + fpCalculatorService.calculate((i1, i2) -> i1 * i2, 11, 2));
+        System.out.println("      Division: " + fpCalculatorService.calculate((i1, i2) -> i1 / i2, 20, 4));
+        System.out.println("   custom calc: " + fpCalculatorService.calculate((i1, i2) -> ((i1 + i2) * 2) / i2, 20, 4));
     }
 }
 
@@ -91,13 +92,14 @@ class CalculatorService {
         }
     }
 }
-    class FpCalculatorService {
-        public int calculate(Calculation calculation, int num1, int num2) {
-            if (num1 > 10 && num2 < num1) {
-                return calculation.calculate(num1, num2);
-            } else {
-                throw new IllegalArgumentException("Invalid input num1: " + num1 + ", num2: " + num2);
-            }
+
+class FpCalculatorService {
+    public int calculate(Calculation calculation, int num1, int num2) {
+        if (num1 > 10 && num2 < num1) {
+            return calculation.calculate(num1, num2);
+        } else {
+            throw new IllegalArgumentException("Invalid input num1: " + num1 + ", num2: " + num2);
         }
-   }
+    }
+}
 
