@@ -5,6 +5,7 @@ import java.util.List;
  * Created by redfo on 2015-09-28.
  */
 public class WhyJava8 {
+
     public static void main(String[] args) {
         final List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
@@ -16,11 +17,13 @@ public class WhyJava8 {
 //                stringBuilder.append(" : ");
 //            }
 //        }
+        final String separator = " : ";
         for (Integer number : numbers) {
-            stringBuilder.append(number).append(" : ");
+            stringBuilder.append(number).append(separator);
         }
-        if (stringBuilder.length() > 0) {
-            stringBuilder.delete(stringBuilder.length() - 3, stringBuilder.length());
+        final int stringLenght = stringBuilder.length();
+        if (stringLenght > 0) {
+            stringBuilder.delete(stringLenght - separator.length(), stringLenght);
         }
         System.out.println(stringBuilder.toString());
     }
