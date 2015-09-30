@@ -1,6 +1,8 @@
 import java.util.Arrays;
 import java.util.List;
 
+import static java.util.stream.Collectors.joining;
+
 /**
  * Created by redfo on 2015-09-28.
  */
@@ -26,5 +28,10 @@ public class WhyJava8 {
             stringBuilder.delete(stringLenght - separator.length(), stringLenght);
         }
         System.out.println(stringBuilder.toString());
+
+        final String result = numbers.stream()
+                .map(String::valueOf)
+                .collect(joining(" : "));
+        System.out.println(result);
     }
 }
