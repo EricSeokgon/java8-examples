@@ -1,3 +1,5 @@
+package tk.hadeslee.examples.java8;
+
 import java.util.Arrays;
 import java.util.List;
 
