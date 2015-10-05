@@ -27,7 +27,7 @@ public class FunctionalInterfaceExamples {
 
         print.accept("Hello");
         greeting.accept("World");
-        greeting.accept("Hades lee");
+        greeting.accept("Hades.lee");
 
         Predicate<Integer> isPositive = i -> i > 0;
 
