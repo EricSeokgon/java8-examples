@@ -54,6 +54,7 @@ public class FunctionalInterfaceExamples {
                 numbersLessThan3.add(num);
             }
         }
+
         System.out.println("less than 3: " + numbersLessThan3);
         System.out.println("positive integers: " + filter(numbers, isPositive));
         System.out.println("less than 3: " + filter(numbers, lessThan3));
