@@ -1,5 +1,6 @@
 package tk.hadeslee.examples.java8;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -98,8 +99,31 @@ public class FunctionalInterfaceExamples {
     }
 
     public static void main(String[] args) {
+        println(1, 2, 3,
+                (i1, i2, i3) -> String.valueOf(i1 + i2 + i3));
+        println("Area is  ", 12, 20,
+                (message, length, width) -> message + (length * width));
         println(1L, "Hades", "test@email.com",
                 (id, name, email) -> "User info : ID=" + id + ", name=" + name + ", email=" + email);
+
+        Function3<Integer, Integer, Integer, String> f3 = (i1, i2, i3) -> String.valueOf(i1 + i2 + i3);
+
+        BigDecimalToCurrency bigDecimalToCurrency = bd -> "$" + bd.toString();
+        System.out.println(bigDecimalToCurrency.toCurrency(new BigDecimal("120.00")));
+
+        final InvalidFunctionalInterface anonymousClass = new InvalidFunctionalInterface() {
+            @Override
+            public <T> String mkString(final T value) {
+                return value.toString();
+            }
+        };
+
+        System.out.println("anonymous class: " + anonymousClass.mkString(123));
+
+//        final InvalidFunctionalInterface invalidFunctionalInterface = value -> value.toString();
+//        System.out.println(invalidFunctionalInterface.mkString(123));
+
+
     }
 
     private static <T1, T2, T3> void println(T1 t1, T2 t2, T3 t3, Function3<T1, T2, T3, String> function) {
@@ -112,4 +136,14 @@ interface Function3<T1, T2, T3, R> {
     R apply(T1 t1, T2 t2, T3 t3);
 
 //    void print(int i);
+}
+
+@FunctionalInterface
+interface BigDecimalToCurrency {
+    String toCurrency(BigDecimal value);
+}
+
+@FunctionalInterface
+interface InvalidFunctionalInterface {
+    <T> String mkString(T value); //펑션널 인터페이스로 사용할수 없음(제러릭 타입을 지정해야함)
 }
