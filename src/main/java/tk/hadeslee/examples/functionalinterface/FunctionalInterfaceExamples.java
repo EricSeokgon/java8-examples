@@ -16,12 +16,17 @@ import java.util.function.Predicate;
  */
 public class FunctionalInterfaceExamples {
     public static void main(String[] args) {
+        final Product productA = new Product(1L, "A", new BigDecimal("10.00"));
+        final Product productB = new Product(2L, "B", new BigDecimal("55.50"));
+        final Product productC = new Product(3L, "C", new BigDecimal("17.45"));
+        final Product productD = new Product(4L, "D", new BigDecimal("20.00"));
+        final Product productE = new Product(5L, "E", new BigDecimal("110.99"));
         final List<Product> products = Arrays.asList(
-                new Product(1L, "A", new BigDecimal("10.00")),
-                new Product(2L, "B", new BigDecimal("55.50")),
-                new Product(3L, "C", new BigDecimal("17.45")),
-                new Product(4L, "D", new BigDecimal("23.00")),
-                new Product(5L, "E", new BigDecimal("110.99"))
+                productA,
+                productB,
+                productC,
+                productD,
+                productE
         );
 
         final BigDecimal twenty = new BigDecimal("20");
@@ -59,6 +64,20 @@ public class FunctionalInterfaceExamples {
             total = total.add(price);
         }
         System.out.println("total :" + total);
+
+        final BigDecimal Newtotal = total(products, product -> product.getPrice());
+        System.out.println("Newtotal :" + total);
+
+        final BigDecimal discountedTotal = total(products, product -> product.getPrice());
+        System.out.println("discountedTotal :" + discountedTotal);
+
+        Order order = new Order(1L, "on-1234", Arrays.asList(
+                new OrderedItem(1L, productA, 2),
+                new OrderedItem(2L, productC, 1),
+                new OrderedItem(3L, productD, 10)
+        ));
+
+        System.out.println("order total :" + order.totalPrice());
     }
 
     private static <T> List<T> filter(List<T> list, Predicate<? super T> predicate) {
@@ -79,20 +98,52 @@ public class FunctionalInterfaceExamples {
         return result;
     }
 
-//    private static <T> BigDecimal total(List<T> list, )
-}
+    private static <T> BigDecimal total(List<T> list, Function<T, BigDecimal> mapper) {
+        BigDecimal total = BigDecimal.ZERO;
+        for (final T t : list) {
+            total = total.add(mapper.apply(t));
+        }
+        return total;
+    }
 
-@AllArgsConstructor
-@Data
-class Product {
-    private Long id;
-    private String name;
-    private BigDecimal price;
-}
+    @AllArgsConstructor
+    @Data
+    static class Product {
+        private Long id;
+        private String name;
+        private BigDecimal price;
+    }
 
-@ToString(callSuper = true)
-class DiscountedProduct extends Product {
-    public DiscountedProduct(Long id, String name, BigDecimal price) {
-        super(id, name, price);
+    @ToString(callSuper = true)
+    static class DiscountedProduct extends Product {
+        public DiscountedProduct(Long id, String name, BigDecimal price) {
+            super(id, name, price);
+        }
+    }
+
+    @AllArgsConstructor
+    @Data
+    static class OrderedItem {
+        private Long id;
+        private Product product;
+        private int quantity;
+
+        public BigDecimal getItemTotal() {
+            return product.getPrice().multiply(new BigDecimal(quantity));
+        }
+
+    }
+
+    @AllArgsConstructor
+    @Data
+    static class Order {
+        private Long id;
+        private String orderNumber;
+        private List<OrderedItem> items;
+
+        public BigDecimal totalPrice() {
+            return total(items, orderedItem -> orderedItem.getItemTotal());
+        }
     }
 }
+
