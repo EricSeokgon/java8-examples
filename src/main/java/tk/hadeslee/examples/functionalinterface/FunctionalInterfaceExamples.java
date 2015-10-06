@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * Created by redfo on 2015-10-06.
@@ -22,13 +23,23 @@ public class FunctionalInterfaceExamples {
         );
 
         final BigDecimal twenty = new BigDecimal("20");
-        final List<Product> result = new ArrayList<>();
-        for (final Product product : products) {
-            if (product.getPrice().compareTo(twenty) >= 0) {
-                result.add(product);
+        System.out.println("products >= $20: "+
+        filter(products, product -> product.getPrice().compareTo(twenty) >= 0
+        ));
+
+        System.out.println("products <= $10: "+
+                filter(products, product -> product.getPrice().compareTo(new BigDecimal("10")) <= 0
+                ));
+    }
+
+    private static <T> List<T> filter(List<T> list, Predicate<T> predicate) {
+        final List<T> result = new ArrayList<>();
+        for (final T t : list) {
+            if (predicate.test(t)) {
+                result.add(t);
             }
         }
-        System.out.println(result);
+        return result;
     }
 }
 
