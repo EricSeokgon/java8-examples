@@ -51,6 +51,8 @@ dependencies {
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
     //compile("org.springframework:springloaded:1.2.4.RELEASE")
     compile("org.assertj:assertj-core:3.2.0")
+    compile("org.projectlombok:lombok:1.16.6")
+
 
 }
 
