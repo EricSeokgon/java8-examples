@@ -52,6 +52,13 @@ public class FunctionalInterfaceExamples {
         System.out.println("             products (<= $30 " +
                         filter(products, lessThanOrEqualto30)
         );
+
+        final List<BigDecimal> prices = map(products, product -> product.getPrice());
+        BigDecimal total = BigDecimal.ZERO;
+        for (final BigDecimal price : prices) {
+            total = total.add(price);
+        }
+        System.out.println("total :" + total);
     }
 
     private static <T> List<T> filter(List<T> list, Predicate<? super T> predicate) {
@@ -71,6 +78,8 @@ public class FunctionalInterfaceExamples {
         }
         return result;
     }
+
+//    private static <T> BigDecimal total(List<T> list, )
 }
 
 @AllArgsConstructor
