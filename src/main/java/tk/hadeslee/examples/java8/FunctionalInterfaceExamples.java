@@ -3,9 +3,11 @@ package tk.hadeslee.examples.java8;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 /**
  * Created by redfo on 2015-10-01.
@@ -56,6 +58,32 @@ public class FunctionalInterfaceExamples {
         System.out.println("positive integers: " + filter(numbers, isPositive));
         System.out.println("less than 3: " + filter(numbers, lessThan3));
 
+        final Supplier<String> helloSupplier = () -> "Hello ";
+        System.out.println(helloSupplier.get() + "world");
+
+        long start = System.currentTimeMillis();
+        printIfValidIndex(0, getVeryExpensiveValue());
+        printIfValidIndex(-1, getVeryExpensiveValue());
+        printIfValidIndex(-2, getVeryExpensiveValue());
+        System.out.println("It took " + ((System.currentTimeMillis() - start) / 1000) + " seconds. ");
+    }
+
+    private static String getVeryExpensiveValue() {
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        //Let's just it has very expensive calculation here!
+        return "hades";
+    }
+
+    private static void printIfValidIndex(int number, String value) {
+        if (number >= 0) {
+            System.out.println("The value i s " + value + ".");
+        } else {
+            System.out.println("Invalid");
+        }
     }
 
     private static <T> List<T> filter(List<T> list, Predicate<T> filter) {
