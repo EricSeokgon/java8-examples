@@ -39,13 +39,14 @@ public class StreamPrelude {
         );
 
         System.out.println("\n");
-        System.out.println("map(numbers, i -> i * 2)\n"+
-                map(numbers, i -> i * 2)
+        System.out.println("map(numbers, i -> i * 2)\n" +
+                        map(numbers, i -> i * 2)
         );
-        System.out.println("map(numbers, null)\n"+
-                map(numbers, null)
+        System.out.println("map(numbers, null)\n" +
+                        map(numbers, i -> i)
         );
     }
+
     private static <T, R> List<R> map(final List<T> list, final Function<T, R> mapper) {
         final Function<T, R> function;
         if (mapper != null) {
