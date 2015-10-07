@@ -38,7 +38,7 @@ public class StreamPrelude {
                 mapOld(numbers, null)
         );
 
-        System.out.println("\n");
+        System.out.println(" ");
         System.out.println("map(numbers, i -> i * 2)\n" +
                         map(numbers, i -> i * 2)
         );
