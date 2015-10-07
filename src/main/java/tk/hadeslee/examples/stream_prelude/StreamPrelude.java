@@ -45,6 +45,9 @@ public class StreamPrelude {
         System.out.println("map(numbers, i -> i)\n" +
                         map(numbers, i -> i)
         );
+        System.out.println("map(numbers, Function.identity())\n" +
+                        map(numbers, Function.identity())
+        );
     }
 
     private static <T, R> List<R> map(final List<T> list, final Function<T, R> mapper) {
