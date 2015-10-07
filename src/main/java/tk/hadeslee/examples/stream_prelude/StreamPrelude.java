@@ -42,7 +42,7 @@ public class StreamPrelude {
         System.out.println("map(numbers, i -> i * 2)\n" +
                         map(numbers, i -> i * 2)
         );
-        System.out.println("map(numbers, null)\n" +
+        System.out.println("map(numbers, i -> i)\n" +
                         map(numbers, i -> i)
         );
     }
