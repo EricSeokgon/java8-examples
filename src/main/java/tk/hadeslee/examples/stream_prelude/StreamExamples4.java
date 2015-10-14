@@ -27,10 +27,19 @@ public class StreamExamples4 {
                 new Product(4L, "D", new BigDecimal("80.20")),
                 new Product(5L, "E", new BigDecimal("7.50"))
         );
-        System.out.println("product.getPrice >= 30: " +
+
+        System.out.println("product.getPrice >= 30: \n" +
                         products.stream()
                                 .filter(product -> product.getPrice().compareTo(new BigDecimal("30")) >= 0)
                                 .collect(toList())
+
+        );
+        System.out.println("\n======================================\n");
+        System.out.println("product.getPrice >= 30(with joining(\"\\n\")): \n" +
+                        products.stream()
+                                .filter(product -> product.getPrice().compareTo(new BigDecimal("30")) >= 0)
+                                .map(product -> product.toString())
+                                .collect(joining("\n"))
 
         );
     }
