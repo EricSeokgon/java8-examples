@@ -57,6 +57,23 @@ public class StreamExamples4 {
 
         );
         // .reduce(BigDecimal.ZERO, (product1, product2) -> product1.getPrice().add(product2.getPrice()))
+
+        System.out.println("\n======================================\n");
+        System.out.println("Total Price of Products.price >= 30: " +
+                        products.stream()
+                                .filter(product -> product.getPrice().compareTo(new BigDecimal("30")) >= 0)
+                                .map(product1 -> product1.getPrice())
+                                .reduce(BigDecimal.ZERO, (price1, price2) -> price1.add(price2))
+
+        );
+
+        System.out.println("\n======================================\n");
+        System.out.println("# of Products.price >= 30: " +
+                        products.stream()
+                                .filter(product -> product.getPrice().compareTo(new BigDecimal("30")) >= 0)
+                                .count()
+
+        );
     }
 }
 
@@ -66,4 +83,19 @@ class Product {
     private Long id;
     private String name;
     private BigDecimal price;
+}
+
+@AllArgsConstructor
+@Data
+class OrderedItem {
+    private Long id;
+    private Product product;
+    private int quantity;
+}
+
+@AllArgsConstructor
+@Data
+class Order {
+    private Long id;
+    private List<OrderedItem> items;
 }
