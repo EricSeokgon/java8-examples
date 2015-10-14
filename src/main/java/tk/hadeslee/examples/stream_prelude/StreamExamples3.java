@@ -109,10 +109,11 @@ public class StreamExamples3 {
         );
 
         final List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        System.out.println("for (Integer i : numbers): ");
         for (Integer i : numbers) {
             System.out.print("i = " + i + " ");
         }
-        System.out.println("forEach(i -> System.out.println(i))");
+        System.out.println("\nforEach(i -> System.out.println(i)): ");
         Stream.of(1, 2, 3, 4, 5)
                 .forEach(i -> System.out.print(i + " "));
 
