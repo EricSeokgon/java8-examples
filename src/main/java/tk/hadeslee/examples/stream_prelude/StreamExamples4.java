@@ -1,8 +1,13 @@
 package tk.hadeslee.examples.stream_prelude;
 
-import java.util.stream.Stream;
-
 import static java.util.stream.Collectors.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.List;
+
 
 /**
  * Project: java8-examples
@@ -15,14 +20,26 @@ import static java.util.stream.Collectors.*;
  */
 public class StreamExamples4 {
     public static void main(String[] args) {
-        Stream.of(1, 2, 3, 4, 5)
-                .collect(toList());
+        final List<Product> products = Arrays.asList(
+                new Product(1L, "A", new BigDecimal("100.50")),
+                new Product(2L, "B", new BigDecimal("23.00")),
+                new Product(3L, "C", new BigDecimal("31.45")),
+                new Product(4L, "D", new BigDecimal("80.20")),
+                new Product(5L, "E", new BigDecimal("7.50"))
+        );
+        System.out.println("product.getPrice >= 30: " +
+                        products.stream()
+                                .filter(product -> product.getPrice().compareTo(new BigDecimal("30")) >= 0)
+                                .collect(toList())
 
-        Stream.of(1, 2, 3, 4, 5)
-                .collect(toSet());
-
-        Stream.of(1, 2, 3, 4, 5)
-                .map(i -> String.valueOf(i))
-                .collect(joining());
+        );
     }
+}
+
+@AllArgsConstructor
+@Data
+class Product {
+    private Long id;
+    private String name;
+    private BigDecimal price;
 }
