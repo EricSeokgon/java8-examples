@@ -35,7 +35,8 @@ public class StreamExamples5Parallel {
                 IntStream.range(0, 100)
                         .parallel()
                         .sum());
-        System.out.println("\n=================================");
+
+        /*System.out.println("\n=================================");
         System.out.println("Stream");
         final long start = System.currentTimeMillis();
         Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8)
@@ -49,10 +50,10 @@ public class StreamExamples5Parallel {
                     return i;
                 })
                 .forEach(i -> System.out.println(i));
-        System.out.println(System.currentTimeMillis() - start);
+        System.out.println(System.currentTimeMillis() - start);*/
 
         System.out.println("\n=================================");
-        System.out.println("Parallel Stream");
+        System.out.println("Parallel Stream (8 elements)");
         final long start2 = System.currentTimeMillis();
         Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8)
                 .parallelStream()
@@ -66,5 +67,55 @@ public class StreamExamples5Parallel {
                 })
                 .forEach(i -> System.out.println(i));
         System.out.println(System.currentTimeMillis() - start2);
+
+        System.out.println("\n=================================");
+        System.out.println("Parallel Stream (9 elements)");
+        final long start3 = System.currentTimeMillis();
+        Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9)
+                .parallelStream()
+                .map(i -> {
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    return i;
+                })
+                .forEach(i -> System.out.println(i));
+        System.out.println(System.currentTimeMillis() - start3);
+
+        System.out.println("\n=================================");
+        System.out.println("Parallel Stream (8 elements) with parallelism: 7");
+        System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism", "7");
+        final long start4 = System.currentTimeMillis();
+        Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8)
+                .parallelStream()
+                .map(i -> {
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    return i;
+                })
+                .forEach(i -> System.out.println(i));
+        System.out.println(System.currentTimeMillis() - start4);
+
+        System.out.println("\n=================================");
+        System.out.println("Parallel Stream (8 elements) with parallelism: 3");
+        System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism", "3");
+        final long start5 = System.currentTimeMillis();
+        Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8)
+                .parallelStream()
+                .map(i -> {
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    return i;
+                })
+                .forEach(i -> System.out.println(i));
+        System.out.println(System.currentTimeMillis() - start5);
     }
 }
