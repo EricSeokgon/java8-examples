@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class Cities {
     public static void main(String[] args) {
-         boolean found = false;
+        boolean found = false;
 
         //String[] cities = new String[0];
         final List<String> cities = Arrays.asList("Busan", "Seoul", "Daegu");
