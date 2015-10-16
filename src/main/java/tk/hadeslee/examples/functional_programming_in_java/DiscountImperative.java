@@ -35,7 +35,6 @@ public class DiscountImperative {
                         .filter(price -> price.compareTo(BigDecimal.valueOf(20)) > 0)
                         .map(price -> price.multiply(BigDecimal.valueOf(0.9)))
                         .reduce(BigDecimal.ZERO, BigDecimal::add);
-
         System.out.println("=========================================");
         System.out.println("Total of discount prices(stream().filter)): " + totalOfDiscountPrices2);
     }
