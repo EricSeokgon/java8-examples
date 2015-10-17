@@ -17,7 +17,7 @@ public class Iteration {
     public static void main(String[] args) {
         final List<String> friends = Arrays.asList("Brian", "nate", "neal", "Raju", "Sara", "Scott");
         System.out.println("========================");
-        System.out.println("old for loop: \n");
+        System.out.println("old for loop(iterate and print each of the elements): \n");
         for (int i = 0; i < friends.size(); i++) {
             System.out.println(friends.get(i));
 
@@ -41,6 +41,18 @@ public class Iteration {
         System.out.println("========================");
         System.out.println("forEach() method(lambda expression): \n");
         friends.forEach((final String name) -> System.out.println(name));
+
+        System.out.println("========================");
+        System.out.println("forEach() method(lambda expression without the type information): \n");
+        friends.forEach((name) -> System.out.println(name));
+
+        System.out.println("========================");
+        System.out.println("non-final forEach() method(single-parameter lambda expression as special): \n");
+        friends.forEach(name -> System.out.println(name));
+
+        System.out.println("========================");
+        System.out.println("forEach() method(lambda expression concisely): \n");
+        friends.forEach(System.out::println);
 
     }
 }
