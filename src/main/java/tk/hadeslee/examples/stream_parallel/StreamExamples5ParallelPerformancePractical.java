@@ -54,7 +54,7 @@ public class StreamExamples5ParallelPerformancePractical {
 
     private static void impreativeTest(BigDecimal targetPrice) {
         System.out.println("===========================");
-        System.out.println("\nImperative Sum\n-----------------------------");
+        System.out.println("\nImperative Sum\n---------------------------");
         final long start = System.currentTimeMillis();
         System.out.println("Sum: " +
                         imperativeSum(products, product -> product.getPrice().compareTo(targetPrice) >= 0)
@@ -65,7 +65,7 @@ public class StreamExamples5ParallelPerformancePractical {
 
     private static void streamTest(BigDecimal targetPrice) {
         System.out.println("===========================");
-        System.out.println("\nStream Sum\n-----------------------------");
+        System.out.println("\nStream Sum\n---------------------------");
         final long start = System.currentTimeMillis();
         System.out.println("Sum: " +
                         streamSum(products.stream(), product -> product.getPrice().compareTo(targetPrice) >= 0)
@@ -76,7 +76,7 @@ public class StreamExamples5ParallelPerformancePractical {
 
     private static void parallelStreamTest(BigDecimal targetPrice) {
         System.out.println("===========================");
-        System.out.println("\nParallel Stream Sum\n-----------------------------");
+        System.out.println("\nParallel Stream Sum\n---------------------------");
         final long start = System.currentTimeMillis();
         System.out.println("Sum: " +
                         streamSum(products.parallelStream(), product -> product.getPrice().compareTo(targetPrice) >= 0)
@@ -89,18 +89,18 @@ public class StreamExamples5ParallelPerformancePractical {
 
         final BigDecimal targetPrice = new BigDecimal("40");
 
-        impreativeTest(targetPrice);
         streamTest(targetPrice);
         parallelStreamTest(targetPrice);
+        impreativeTest(targetPrice);
 
-        System.out.println("\nignore Tests Above\n=====================");
+        System.out.println("\nIgnore Tests Above\n=====================");
         System.out.println("Start!");
         for (int i = 0; i < 5; i++) {
             BigDecimal price = targetPrices[targetPriceRandom.nextInt(3)];
 
-            impreativeTest(price);
-            streamTest(price);
             parallelStreamTest(price);
+            streamTest(price);
+            impreativeTest(price);
 
         }
 
