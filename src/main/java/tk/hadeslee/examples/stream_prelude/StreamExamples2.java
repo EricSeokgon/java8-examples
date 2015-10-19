@@ -15,7 +15,7 @@ public class StreamExamples2 {
     public static void main(String[] args) {
         Stream<Integer> stream = Stream.of(1, 2, 3);
 
-        stream.filter(value -> value > 1)
+        stream.filter(value -> value > 0)
                 .forEach(value -> System.out.println(value));
 
     }
