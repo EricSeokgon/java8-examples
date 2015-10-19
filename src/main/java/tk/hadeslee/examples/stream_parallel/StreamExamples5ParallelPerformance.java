@@ -54,7 +54,8 @@ public class StreamExamples5ParallelPerformance {
         /*final long start = System.currentTimeMillis();
         1 + 2 + 3 + ... + 98 + 99 + 100
         System.out.println((1 + n) * (n / 2));
-        System.out.println(System.currentTimeMillis() - start);*/
+        System.out.println(System.currentTimeMillis() - start);
+        */
 
         final long start1 = System.currentTimeMillis();
         System.out.println("iterativeSum(n): " + iterativeSum(n));
