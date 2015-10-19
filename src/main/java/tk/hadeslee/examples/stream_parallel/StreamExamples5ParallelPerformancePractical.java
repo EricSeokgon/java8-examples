@@ -79,7 +79,7 @@ public class StreamExamples5ParallelPerformancePractical {
         System.out.println("\nParallel Stream Sum\n---------------------------");
         final long start = System.currentTimeMillis();
         System.out.println("Sum: " +
-                        streamSum(products.parallelStream(), product -> product.getPrice().compareTo(targetPrice) >= 0)
+                        parallelStreamSum(products.parallelStream(), product -> product.getPrice().compareTo(targetPrice) >= 0)
         );
         System.out.println("It took " + (System.currentTimeMillis() - start) + " ms.");
         System.out.println("===========================");
