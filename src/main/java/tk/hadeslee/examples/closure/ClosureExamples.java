@@ -24,7 +24,9 @@ public class ClosureExamples {
     }
 
     private static void testClosure(final String name, final Runnable runnable) {
-        System.out.println("Start: " + name + " : ");
+        System.out.println("=============================");
+        System.out.println(name + " : ");
         runnable.run();
+        System.out.println("=============================");
     }
 }
