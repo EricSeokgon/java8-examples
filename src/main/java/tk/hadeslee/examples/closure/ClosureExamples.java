@@ -11,7 +11,7 @@ package tk.hadeslee.examples.closure;
  */
 public class ClosureExamples {
     public static void main(String[] args) {
-        final int number = 100;
+        final int number = 999;
 
         testClosure("Anonymous Class", new Runnable() {
             @Override
