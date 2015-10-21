@@ -1,5 +1,7 @@
 package tk.hadeslee.examples.closure;
 
+import java.util.function.Function;
+
 /**
  * Project: java8-examples
  * FileName: ClosureExamples2
@@ -19,14 +21,15 @@ public class ClosureExamples2 {
     private static void test() {
         int number = 100;
 
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                System.out.println(number);
-            }
-        };
-        runnable.run();
+//        Runnable runnable = new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.println(number);
+//            }
+//        };
+//        runnable.run();
 
+        Function<Integer, Integer> func = i -> i * 2;
         Runnable runnable1 = () -> System.out.println(number);
         runnable1.run();
     }
