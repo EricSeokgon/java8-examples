@@ -1,4 +1,4 @@
-package tk.hadeslee.examples.functional_programming_in_java;
+package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions;
 
 import java.math.BigDecimal;
 import java.util.Arrays;

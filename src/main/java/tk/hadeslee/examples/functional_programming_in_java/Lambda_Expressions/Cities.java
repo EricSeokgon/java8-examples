@@ -1,4 +1,4 @@
-package tk.hadeslee.examples.functional_programming_in_java;
+package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions;
 
 import java.util.Arrays;
 import java.util.List;
