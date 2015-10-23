@@ -43,6 +43,12 @@ public class Transform {
                 .forEach(count -> System.out.print(count + " "));
         System.out.println("\n=====================");
 
+        System.out.println("Using Method References: ");
+        friends.stream()
+                .map(String::toUpperCase)
+                .forEach(name -> System.out.print(name + " "));
+        System.out.println("\n=====================");
+
 
     }
 
