@@ -22,6 +22,9 @@ public class Transform {
             uppercaseNames.add(name.toUpperCase());
         }
 
+        friends.forEach(name->uppercaseNames.add(name.toUpperCase()));
+        System.out.println(uppercaseNames);
+
     }
 
 
