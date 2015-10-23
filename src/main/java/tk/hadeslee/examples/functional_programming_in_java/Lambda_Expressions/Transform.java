@@ -1,5 +1,7 @@
 package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions;
 
+import static java.util.stream.Collectors.joining;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -46,7 +48,14 @@ public class Transform {
         System.out.println("Using Method References: ");
         friends.stream()
                 .map(String::toUpperCase)
-                .forEach(name -> System.out.print(name + " "));
+                .forEach(name -> System.out.println(name));
+        System.out.println("\n=====================");
+
+        System.out.println("Using Method References: ");
+        final String result = friends.stream()
+                .map(String::toUpperCase)
+                .collect(joining(" , "));
+        System.out.print(result);
         System.out.println("\n=====================");
 
 
