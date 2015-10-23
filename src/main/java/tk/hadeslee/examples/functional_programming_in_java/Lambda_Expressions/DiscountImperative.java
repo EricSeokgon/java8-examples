@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Project: java8-examples
+ * Project: java8-examples~
  * FileName: DiscountImperative
  * Date: 2015-10-17
  * Time: 오전 3:57
