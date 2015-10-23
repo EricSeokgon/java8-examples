@@ -18,12 +18,31 @@ public class Transform {
         final List<String> uppercaseNames = new ArrayList<String>();
         final List<String> friends = Arrays.asList("Brian", "nate", "neal", "Raju", "Sara", "Scott");
 
+        System.out.println("imperative style: ");
         for (String name : friends) {
             uppercaseNames.add(name.toUpperCase());
         }
+        System.out.println("=====================");
 
-        friends.forEach(name->uppercaseNames.add(name.toUpperCase()));
+        System.out.println("functional style: ");
+        friends.forEach(name -> uppercaseNames.add(name.toUpperCase()));
         System.out.println(uppercaseNames);
+        System.out.println("=====================");
+
+        System.out.println("using Lambda Expressions: ");
+        friends.stream()
+                .map(name -> name.toUpperCase())
+                .forEach(name -> System.out.print(name + " "));
+
+        System.out.println("\n=====================");
+
+
+        System.out.println("using Lambda Expressions(ouput would be a sequence of numbers): ");
+        friends.stream()
+                .map(name -> name.length())
+                .forEach(count -> System.out.print(count + " "));
+        System.out.println("\n=====================");
+
 
     }
 
