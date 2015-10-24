@@ -16,8 +16,8 @@ import java.util.stream.Collectors;
  */
 public class PickElements {
     public static void main(String[] args) {
-        final List<String> friends = Arrays.asList("Brian", "nate", "neal", "Raju", "Sara", "Scott");
-        ;
+        final List<String> friends = Arrays.asList("Brian", "Nate", "Neal", "Raju", "Sara", "Scott");
+
 
         final List<String> startsWithN = new ArrayList<String>();
         for (String name : friends) {
@@ -28,5 +28,7 @@ public class PickElements {
                 friends.stream()
                         .filter(name -> name.startsWith("N"))
                         .collect(Collectors.toList());
+
+        System.out.println(String.format("Found %d names", startsWithN2.size()));
     }
 }
