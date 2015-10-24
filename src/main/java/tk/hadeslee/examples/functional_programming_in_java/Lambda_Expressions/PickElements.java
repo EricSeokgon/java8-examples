@@ -3,6 +3,7 @@ package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Project: java8-examples
@@ -15,10 +16,17 @@ import java.util.List;
  */
 public class PickElements {
     public static void main(String[] args) {
+        final List<String> friends = Arrays.asList("Brian", "nate", "neal", "Raju", "Sara", "Scott");
+        ;
+
         final List<String> startsWithN = new ArrayList<String>();
-        final List<String> friends = Arrays.asList("Brian", "nate", "neal", "Raju", "Sara", "Scott");;
         for (String name : friends) {
             startsWithN.add(name);
         }
+
+        final List<String> startsWithN2 =
+                friends.stream()
+                        .filter(name -> name.startsWith("N"))
+                        .collect(Collectors.toList());
     }
 }
