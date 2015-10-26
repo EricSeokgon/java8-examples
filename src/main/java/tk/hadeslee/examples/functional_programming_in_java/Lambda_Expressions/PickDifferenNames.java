@@ -2,6 +2,7 @@ package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
@@ -19,14 +20,21 @@ public class PickDifferenNames {
     }
     public static void main(String[] args) {
         final List<String> friends = Arrays.asList("Brian", "nate", "neal", "Raju", "Sara", "Scott");
-        final Predicate<String> startsWithN = name -> name.startsWith("N");
-        final Predicate<String> startsWithB = name -> name.startsWith("B");
+//        final Predicate<String> startsWithN = name -> name.startsWith("N");
+//        final Predicate<String> startsWithB = name -> name.startsWith("B");
 
-        final long countFriendsStartN =
-                friends.stream().filter(startsWithN).count();
+        final Function<String, Predicate<String>> startsWithLetter =
+                (String letter) -> {
+                    Predicate<String> checkStartsWith =
+                            (String name)->name.startsWith(letter);
+                    return checkStartsWith;
+                };
 
-        final long countFriendsStartB =
-                friends.stream().filter(startsWithB).count();
+//        final long countFriendsStartN =
+//                friends.stream().filter(startsWithN).count();
+//
+//        final long countFriendsStartB =
+//                friends.stream().filter(startsWithB).count();
 
     }
 }
