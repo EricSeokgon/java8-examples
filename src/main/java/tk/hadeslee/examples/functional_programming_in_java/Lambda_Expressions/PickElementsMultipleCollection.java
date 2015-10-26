@@ -2,6 +2,7 @@ package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * Project: java8-examples
@@ -18,14 +19,16 @@ public class PickElementsMultipleCollection {
         final List<String> friends = Arrays.asList("Brian", "nate", "neal", "Raju", "Sara", "Scott");
         final List<String> comrades = Arrays.asList("Kate", "Ken", "Nick", "Paula", "Zach");
         final List<String> editors = Arrays.asList("Brian", "Jackie", "Jogh", "Mike");
+        final Predicate<String> startWithN = name -> name.startsWith("N");
+
         final long countFriendsStartN =
-                friends.stream().filter(name -> name.startsWith("N")).count();
+                friends.stream().filter(startWithN).count();
 
         final long countComradesStartN =
-                comrades.stream().filter(name -> name.startsWith("N")).count();
+                comrades.stream().filter(startWithN).count();
 
         final long countEditorsStartN =
-                editors.stream().filter(name -> name.startsWith("N")).count();
+                editors.stream().filter(startWithN).count();
 
     }
 }
