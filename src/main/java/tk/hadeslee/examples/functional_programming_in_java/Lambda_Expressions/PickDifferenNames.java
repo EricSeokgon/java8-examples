@@ -14,6 +14,9 @@ import java.util.function.Predicate;
  * To change this template use File | Settings | File Templates.
  */
 public class PickDifferenNames {
+    public static Predicate<String> checkIfStartsWith(final String letter){
+        return name ->name.startsWith(letter);
+    }
     public static void main(String[] args) {
         final List<String> friends = Arrays.asList("Brian", "nate", "neal", "Raju", "Sara", "Scott");
         final Predicate<String> startsWithN = name -> name.startsWith("N");
