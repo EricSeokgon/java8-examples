@@ -27,11 +27,11 @@ public class PickDifferenNames {
         final Function<String, Predicate<String>> startsWithLetter =
                 letter -> name -> name.startsWith(letter);
 
-//        final long countFriendsStartN =
-//                friends.stream().filter(startsWithN).count();
-//
-//        final long countFriendsStartB =
-//                friends.stream().filter(startsWithB).count();
+        final long countFriendsStartN =
+                friends.stream().filter(startsWithLetter.apply("N")).count();
+
+        final long countFriendsStartB =
+                friends.stream().filter(startsWithLetter.apply("B")).count();
 
     }
 }
