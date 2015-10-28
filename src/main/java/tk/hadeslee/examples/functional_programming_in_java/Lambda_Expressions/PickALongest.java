@@ -25,5 +25,9 @@ public class PickALongest {
         aLongName.ifPresent(name ->
                 System.out.println(String.format("A longest name: %s", name)));
 
+        final String strveOrLonger =
+                friends.stream()
+                        .reduce("Steve", (name1, name2) -> name1.length() >= name2.length() ? name1 : name2);
+
     }
 }
