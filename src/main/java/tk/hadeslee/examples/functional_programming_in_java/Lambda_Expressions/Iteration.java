@@ -15,7 +15,7 @@ import java.util.function.Consumer;
  */
 public class Iteration {
     public static void main(String[] args) {
-        final List<String> friends = Arrays.asList("Brian", "nate", "neal", "Raju", "Sara", "Scott");
+        final List<String> friends = Arrays.asList("Brian", "Nate", "Neal", "Raju", "Sara", "Scott");
         System.out.println("========================");
         System.out.println("old for loop(iterate and print each of the elements): \n");
         for (int i = 0; i < friends.size(); i++) {
