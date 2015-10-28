@@ -1,6 +1,7 @@
 package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions;
 
-import java.util.Arrays;
+import static tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.Folks.friends;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -28,7 +29,7 @@ public class PickAnElementelegant {
     }
 
     public static void main(String[] args) {
-        final List<String> friends = Arrays.asList("Brian", "Nate", "Neal", "Raju", "Sara", "Scott");
+
         pickName(friends, "N");
         pickName(friends, "Z");
 
