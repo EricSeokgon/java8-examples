@@ -23,11 +23,14 @@ public class PickAnElementelegant {
                         .findFirst();
 
         System.out.println(String.format("A name starting with %s: %s", startingLetter, foundName.orElse("No name found")));
+
+        foundName.ifPresent(name -> System.out.println("Hello " + name));
     }
 
     public static void main(String[] args) {
         final List<String> friends = Arrays.asList("Brian", "Nate", "Neal", "Raju", "Sara", "Scott");
         pickName(friends, "N");
         pickName(friends, "Z");
+
     }
 }
