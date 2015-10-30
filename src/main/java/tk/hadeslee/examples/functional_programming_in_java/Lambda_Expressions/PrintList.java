@@ -1,5 +1,6 @@
 package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions;
 
+import static java.util.stream.Collectors.joining;
 import static tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.Folks.*;
 
 /**
@@ -28,6 +29,11 @@ public class PrintList {
         System.out.println("===========================");
         System.out.println("Java8 and the String class has an added convenience method join() to turn that smelly code into a simple on-liner.");
         System.out.println(String.join(", ", friends));
+
+        System.out.println("===========================");
+        System.out.println("lamba expressions and the newly added classes and methods make programming.");
+        System.out.println(
+                friends.stream().map(String::toUpperCase).collect(joining(", ")));
 
     }
 }
