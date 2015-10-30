@@ -13,8 +13,21 @@ import static tk.hadeslee.examples.functional_programming_in_java.Lambda_Express
  */
 public class PrintList {
     public static void main(String[] args) {
+        System.out.println("list and print each element");
         for (String name : friends) {
             System.out.println(name + ", ");
         }
+        System.out.println("===========================");
+        System.out.println("Let's see if the output of this version was decent.");
+        for (int i = 0; i < friends.size() - 1; i++) {
+            System.out.println(friends.get(i) + ", ");
+        }
+        if (friends.size() > 0) {
+            System.out.println(friends.get(friends.size() - 1));
+        }
+        System.out.println("===========================");
+        System.out.println("Java8 and the String class has an added convenience method join() to turn that smelly code into a simple on-liner.");
+        System.out.println(String.join(", ", friends));
+
     }
 }
