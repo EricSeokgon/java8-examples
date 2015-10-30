@@ -14,5 +14,24 @@ public class iterateString {
         final String str = "w00t";
 
         str.chars().forEach(ch-> System.out.println(ch));
+        System.out.println();
+        str.chars().forEach(System.out::println);
+        System.out.println();
+        str.chars().forEach(iterateString::printChar);
+        System.out.println();
+        str.chars()
+                .mapToObj(ch->Character.valueOf((char)ch))
+                .forEach(System.out::println);
+        System.out.println();
+        str.chars()
+                .filter(ch->Character.isDigit(ch))
+                .forEach(ch->printChar(ch));
+        System.out.println();
+        str.chars().filter(Character::isDigit).forEach(iterateString::printChar);
+
+    }
+
+    private static void printChar(int aChar){
+        System.out.println((char)(aChar));
     }
 }
