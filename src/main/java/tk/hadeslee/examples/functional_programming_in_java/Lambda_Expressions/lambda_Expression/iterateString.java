@@ -1,4 +1,4 @@
-package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions;
+package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.lambda_Expression;
 
 /**
  * Project: java8-examples

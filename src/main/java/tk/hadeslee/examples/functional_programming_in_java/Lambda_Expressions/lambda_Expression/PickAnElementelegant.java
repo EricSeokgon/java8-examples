@@ -1,6 +1,6 @@
-package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions;
+package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.lambda_Expression;
 
-import static tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.Folks.friends;
+import static tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.lambda_Expression.Folks.friends;
 
 import java.util.List;
 import java.util.Optional;
