@@ -1,4 +1,4 @@
-package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.lambda_Expression;
+package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.Using_Collections;
 
 import static java.util.stream.Collectors.joining;
 import static tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.lambda_Expression.Folks.*;
