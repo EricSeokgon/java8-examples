@@ -1,4 +1,4 @@
-package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.Using_Collections;
+package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.lambda_Expression;
 
 import java.util.List;
 
