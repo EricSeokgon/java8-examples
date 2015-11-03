@@ -32,6 +32,6 @@ public class Person {
     }
 
     public String toString() {
-        return String.format("%s , %d", name, age);
+        return String.format("%s - %d", name, age);
     }
 }

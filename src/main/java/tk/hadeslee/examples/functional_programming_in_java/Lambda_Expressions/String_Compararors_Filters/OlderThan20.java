@@ -1,5 +1,6 @@
 package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.String_Compararors_Filters;
 
+import static java.util.stream.Collectors.*;
 import static tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.String_Compararors_Filters.Compare.people;
 
 import java.util.ArrayList;
@@ -39,8 +40,13 @@ public class OlderThan20 {
 
         Map<Integer, List<Person>> peopleByAge =
                 people.stream()
-                        .collect(Collectors.groupingBy(Person::getAge));
+                        .collect(groupingBy(Person::getAge));
         System.out.println("People grouped by age: " + peopleByAge);
+
+        Map<Integer, List<String>> nameOfpeopleByAge =
+                people.stream()
+                        .collect(groupingBy(Person::getAge, mapping(Person::getName, toList())));
+        System.out.println("People grouped by age: " + nameOfpeopleByAge);
 
 
     }
