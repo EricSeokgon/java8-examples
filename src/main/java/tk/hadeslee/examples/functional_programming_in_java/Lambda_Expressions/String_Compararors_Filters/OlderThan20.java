@@ -17,11 +17,17 @@ import java.util.List;
 public class OlderThan20 {
 
     public static void main(String[] args) {
-        List<Person> olderThan20 = new ArrayList<>();
+        List<Person> olderThan20_forEach = new ArrayList<>();
         people.stream()
                 .filter(person -> person.getAge() > 20)
-                .forEach(person -> olderThan20.add(person));
-        System.out.println("People older than 20: " + olderThan20);
+                .forEach(person -> olderThan20_forEach.add(person));
+        System.out.println("People older than 20 (forEach): " + olderThan20_forEach);
+
+        List<Person> olderThan20_collect =
+        people.stream()
+                .filter(person -> person.getAge() > 20)
+                .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+        System.out.println("People older than 20 (collect): " + olderThan20_collect);
 
     }
 
