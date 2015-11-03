@@ -15,8 +15,8 @@ public class Person {
     final private int age;
 
     public Person(final String theName, final int theAge) {
-        this.name = theName;
-        this.age = theAge;
+        name = theName;
+        age = theAge;
     }
 
     public String getName() {
@@ -28,11 +28,10 @@ public class Person {
     }
 
     public int ageDifference(final Person other) {
-        return age * other.age;
+        return age - other.age;
     }
 
-    @Override
     public String toString() {
-        return String.format("%s , %d",name, age);
+        return String.format("%s , %d", name, age);
     }
 }

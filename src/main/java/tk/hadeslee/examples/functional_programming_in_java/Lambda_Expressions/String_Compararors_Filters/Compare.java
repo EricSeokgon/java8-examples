@@ -24,10 +24,6 @@ public class Compare {
                 new Person("Jane", 21),
                 new Person("Greg", 35));
 
-        Comparator<Person> compareAscending = (person1, person2) ->
-                person1.ageDifference(person2);
-        Comparator<Person> compareDescending = compareAscending.reversed();
-
         List<Person> ascendingAge =
                 people.stream()
                         .sorted((person1, person2) -> person1.ageDifference(person2))
@@ -35,27 +31,31 @@ public class Compare {
         printPeople("Sorted in ascending order of age: ", ascendingAge);
         System.out.println();
 
+        Comparator<Person> compareAscending = (person1, person2) ->
+                person1.ageDifference(person2);
+        Comparator<Person> compareDescending = compareAscending.reversed();
+
         printPeople("Sorted in descending order of age: ",
                 people.stream()
                         .sorted((person1, person2) -> person2.ageDifference(person1))
                         .collect(toList()));
-
+        System.out.println();
         printPeople("Sorted in ascending order of age: ",
                 people.stream()
                         .sorted(compareAscending)
                         .collect(toList()));
-
+        System.out.println();
         printPeople("Sorted in descending order of age: ",
                 people.stream()
                         .sorted(compareDescending)
                         .collect(toList()));
-
+        System.out.println();
         printPeople("Sorted in ascending order of name: ",
                 people.stream()
                         .sorted((person1, person2) ->
                                 person1.getName().compareTo(person2.getName()))
                         .collect(toList()));
-
+        System.out.println();
         people.stream()
                 .min(Person::ageDifference)
                 .ifPresent(yungest -> System.out.println("Youngest: " + yungest));
@@ -69,6 +69,7 @@ public class Compare {
 
     public static void printPeople(
             final String message, final List<Person> people) {
+
         System.out.println(message);
         people.forEach(System.out::println);
     }
