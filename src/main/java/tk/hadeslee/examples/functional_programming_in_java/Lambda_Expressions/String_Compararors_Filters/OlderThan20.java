@@ -3,9 +3,8 @@ package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.S
 import static java.util.stream.Collectors.*;
 import static tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.String_Compararors_Filters.Compare.people;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
 /**
@@ -47,6 +46,13 @@ public class OlderThan20 {
                 people.stream()
                         .collect(groupingBy(Person::getAge, mapping(Person::getName, toList())));
         System.out.println("People grouped by age: " + nameOfpeopleByAge);
+
+        Comparator<Person> byAge = Comparator.comparing(Person::getAge);
+        Map<Character, Optional<Person>> oldestPersonInEachAlphabet =
+                people.stream()
+                        .collect(groupingBy(person -> person.getName().charAt(0),
+                                reducing(BinaryOperator.maxBy(byAge))));
+        System.out.println("Oldest person in each alphabet: " + oldestPersonInEachAlphabet);
 
 
     }
