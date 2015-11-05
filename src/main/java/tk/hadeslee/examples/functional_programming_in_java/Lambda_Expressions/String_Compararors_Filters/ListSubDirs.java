@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
 /**
  * Project: java8-examples
  * FileName: ListSubDirs
@@ -16,6 +17,11 @@ import java.util.List;
  */
 public class ListSubDirs {
     public static void main(String[] args) {
+        listTheHardWay();
+
+    }
+
+    public static void listTheHardWay() {
         List<File> files = new ArrayList<>();
 
         File[] filesInCurerentDir = new File(".").listFiles();
@@ -29,4 +35,5 @@ public class ListSubDirs {
         }
         System.out.println("Count: " + files.size());
     }
+
 }
