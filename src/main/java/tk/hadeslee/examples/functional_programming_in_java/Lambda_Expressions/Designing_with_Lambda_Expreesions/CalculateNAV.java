@@ -19,7 +19,14 @@ public class CalculateNAV {
 
     private Function<String, BigDecimal> priceFinder;
 
-    public CalculateNAV(final Function<String, BigDecimal> aPriceFinder){
+    public CalculateNAV(final Function<String, BigDecimal> aPriceFinder) {
         priceFinder = aPriceFinder;
+    }
+
+
+    public static void main(String[] args) {
+        final CalculateNAV calculateNAV = new CalculateNAV(YahooFinance::getPrice);
+        System.out.println(String.format("100 shares of Google worth: $%.2f",
+                calculateNAV.computeStockWorth("Good", 100)));
     }
 }
