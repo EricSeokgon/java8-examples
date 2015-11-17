@@ -25,7 +25,7 @@ public class HandleException {
                     } catch (IOException e) {
                         e.getMessage();
                     }
-                })
+                return null;})
                 .forEach(System.out::println);
     }
 }
