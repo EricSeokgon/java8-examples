@@ -15,7 +15,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class HandleException {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         List<String> paths = Arrays.asList("/usr", "/tmp");
 
         paths.stream()
