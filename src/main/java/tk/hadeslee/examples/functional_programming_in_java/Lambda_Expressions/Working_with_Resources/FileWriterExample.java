@@ -34,8 +34,12 @@ public class FileWriterExample {
     public static void main(String[] args) throws IOException {
         final FileWriterExample writerExample = new FileWriterExample("peekaboo.txt");
 
-        writerExample.writeStuff("peek-a-boo");
-        writerExample.close();
+        try {
+            writerExample.writeStuff("peek-a-boo");
+        } finally {
+            writerExample.close();
+        }
+
     }
 
 
