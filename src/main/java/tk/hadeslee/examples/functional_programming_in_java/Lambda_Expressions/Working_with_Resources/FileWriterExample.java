@@ -27,9 +27,16 @@ public class FileWriterExample {
         writer.close();
     }
 
+    public void close() throws IOException {
+        writer.close();
+    }
+
     public static void main(String[] args) throws IOException {
         final FileWriterExample writerExample = new FileWriterExample("peekaboo.txt");
 
         writerExample.writeStuff("peek-a-boo");
+        writerExample.close();
     }
+
+
 }
