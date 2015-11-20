@@ -27,4 +27,15 @@ public class FileWriterEAM {
     public void writeStuff(final String message) throws IOException {
         writer.write(message);
     }
+
+    public static void use(final String fileName,
+                           final UseInstance<FileWriterEAM, IOException> block) throws IOException {
+        final FileWriterEAM writerEAM = new FileWriterEAM(fileName);
+        try {
+            block.accept(writerEAM);
+        } finally {
+            writerEAM.close();
+
+        }
+    }
 }
