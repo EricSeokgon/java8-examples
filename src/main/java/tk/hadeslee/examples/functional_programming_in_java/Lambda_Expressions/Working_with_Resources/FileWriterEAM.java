@@ -38,4 +38,10 @@ public class FileWriterEAM {
 
         }
     }
+
+    public static void main(String[] args) throws IOException {
+        FileWriterEAM.use("eam.txt", writerEAM -> writerEAM.writeStuff("sweet"));
+    }
+
+
 }
