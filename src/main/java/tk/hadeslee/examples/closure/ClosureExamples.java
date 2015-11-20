@@ -13,7 +13,10 @@ public class ClosureExamples {
     final int number = 999;
 
     public static void main(String[] args) {
-    new ClosureExamples().test1();
+        new ClosureExamples().test1();
+        new ClosureExamples().test2();
+        new ClosureExamples().test3();
+        new ClosureExamples().test4();
     }
 
     private void test1() {
@@ -77,7 +80,7 @@ public class ClosureExamples {
         });
 
         testClosure("Lambda Expression", () -> {
-           // int number = 50; // no compile-time error
+            // int number = 50; // no compile-time error
             System.out.println(number);
         });
 
