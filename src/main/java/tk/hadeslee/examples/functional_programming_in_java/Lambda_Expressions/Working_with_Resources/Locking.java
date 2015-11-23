@@ -1,8 +1,10 @@
 package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.Working_with_Resources;
 
-import sun.misc.Lock;
 
-import java.util.concurrent.locks.ReentrantLock;
+import sun.misc.Lock;
+import static tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.Working_with_Resources.Locker.runLocked;
+
+;
 
 /**
  * Project: java8-examples
@@ -14,7 +16,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * To change this template use File | Settings | File Templates.
  */
 public class Locking {
-    Lock lock = new ReentrantLock(); //or mock
+    Lock lock = new Lock(); //or mock
 
     protected void setLock(final Lock mock) {
         lock = mock;
@@ -27,6 +29,18 @@ public class Locking {
         } finally {
             lock.unlock();
         }
+    }
+
+    public void doOp2() throws InterruptedException {
+        runLocked(lock, () -> {/* ...critical code ...*/ });
+    }
+
+    public void doOp3() throws InterruptedException {
+        runLocked(lock, () -> {/* ...critical code ...*/ });
+    }
+
+    public void doOp4() throws InterruptedException {
+        runLocked(lock, () -> {/* ...critical code ...*/ });
     }
 
 

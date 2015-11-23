@@ -12,7 +12,7 @@ import sun.misc.Lock;
  * To change this template use File | Settings | File Templates.
  */
 public class Locker {
-    public static void renLocked(Lock lock, Runnable block) throws InterruptedException {
+    public static void runLocked(Lock lock, Runnable block) throws InterruptedException {
         lock.lock();
         try {
             block.run();
