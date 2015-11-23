@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+
 import java.util.function.Function;
 
 /**
@@ -26,6 +27,21 @@ public class HigherOrderFunctionExamples {
         final List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
         final List<String> mappedList = map(list, i -> "#" + i);
         System.out.println(mappedList);
+
+
+        Function<Integer, Function<Integer, Function<Integer, Integer>>> f3 =
+                i1 -> i2 -> i3 -> i1 + i2 + i3;
+
+        System.out.println(
+                "f3.apply(1).apply(2).apply(3) : " + f3.apply(1).apply(2).apply(3)
+        );
+
+        final Function<Integer, Function<Integer, Integer>> plus10 = f3.apply(10);
+
+        System.out.println(
+                "plus10.apply(1).apply(1) : " + plus10.apply(1).apply(1)
+        );
+
     }
 
     private static <T, R> List<R> map(List<T> list, Function<T, R> mapper) {
