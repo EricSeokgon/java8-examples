@@ -18,6 +18,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/tk/hadeslee/examples/functional_programming_in_java/Lambda_Expressions/Being_lazy/Heavy.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/tk/hadeslee/examples/functional_programming_in_java/Lambda_Expressions/Designing_with_Lambda_Expreesions/FluentMailer.java">
           <value>
             <set />
@@ -58,6 +63,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/tk/hadeslee/examples/functional_programming_in_java/Lambda_Expressions/Working_with_Resources/RodCutterException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/tk/hadeslee/examples/functional_programming_in_java/Lambda_Expressions/Working_with_Resources/UseInstance.java">
           <value>
             <set />
@@ -69,6 +79,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/tk/hadeslee/examples/higher_order_function/List.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/RodCutterTest.java">
           <value>
             <set />
           </value>
