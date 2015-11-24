@@ -22,4 +22,12 @@ public class HolderNaive {
         }
         return heavy;
     }
+
+    public static void main(String[] args) {
+
+        final HolderNaive holder = new HolderNaive();
+        System.out.println("deferring heavy creation...");
+        System.out.println(holder.getHeavy());
+        System.out.println(holder.getHeavy());
+    }
 }
