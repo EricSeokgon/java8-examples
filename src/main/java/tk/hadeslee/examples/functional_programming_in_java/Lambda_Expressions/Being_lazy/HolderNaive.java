@@ -16,7 +16,7 @@ public class HolderNaive {
         System.out.println("Holder created");
     }
 
-    public Heavy getHeavy() {
+    public synchronized Heavy getHeavy() {
         if (heavy == null) {
             heavy = new Heavy();
         }
