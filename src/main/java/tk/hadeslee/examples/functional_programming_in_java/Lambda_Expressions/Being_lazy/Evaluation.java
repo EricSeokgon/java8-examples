@@ -35,6 +35,6 @@ public class Evaluation {
 
     public static void main(String[] args) {
         eagerEvaluator(evaluate(1), evaluate(2));
-  //      lazyEvaluator(() -> evaluate(2), () -> evaluate(1));
+        //      lazyEvaluator(() -> evaluate(2), () -> evaluate(1));
     }
 }
