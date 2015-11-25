@@ -26,7 +26,15 @@ public class Evaluation {
         System.out.println("accept?: " + (input1 && input2));
     }
 
+    public static void lazyEvaluator(
+            final Supplier<Boolean> input1, final Supplier<Boolean> input2) {
+
+        System.out.println("lazyEvaluator called...");
+//        System.out.println("accept?: " + (input1.get() && input2.get()));
+    }
+
     public static void main(String[] args) {
         eagerEvaluator(evaluate(1), evaluate(2));
+  //      lazyEvaluator(() -> evaluate(2), () -> evaluate(1));
     }
 }
