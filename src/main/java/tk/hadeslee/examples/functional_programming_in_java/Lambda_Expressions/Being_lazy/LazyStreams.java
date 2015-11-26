@@ -3,6 +3,7 @@ package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.B
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * Project: java8-examples
@@ -34,5 +35,18 @@ public class LazyStreams {
                 .get();
 
         System.out.println(firstNameWith3Letters);
+
+        Stream<String> namesWith3Letters =
+                names.stream()
+                        .filter(name -> length(name) == 3)
+                        .map(name -> toUpper(name));
+        System.out.println("Stream created, filtered, mapped...");
+        System.out.println("ready to call findFirst...");
+
+        final String firstNameWith3Letters2 =
+                namesWith3Letters.findFirst().get();
+        System.out.println(firstNameWith3Letters2);
+
+
     }
 }
