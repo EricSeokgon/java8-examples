@@ -21,10 +21,18 @@ public class LazyStreams {
 
     private static String toUpper(final String name) {
         System.out.println("converting to uppercase: " + name);
-        return name.toLowerCase();
+        return name.toUpperCase();
     }
 
     public static void main(final String[] args) {
         List<String> names = Arrays.asList("Brad", "Kate", "Kim", "Jack", "Joe", "Mike", "Susan", "George", "Robert", "Julia", "Parker", "Benson");
+
+        final String firstNameWith3Letters = names.stream()
+                .filter(name -> length(name) == 3)
+                .map(name -> toUpper(name))
+                .findFirst()
+                .get();
+
+        System.out.println(firstNameWith3Letters);
     }
 }
