@@ -1,5 +1,9 @@
 package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.Being_lazy;
 
+
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Project: java8-examples
  * FileName: LazyStreams
@@ -18,5 +22,9 @@ public class LazyStreams {
     private static String toUpper(final String name) {
         System.out.println("converting to uppercase: " + name);
         return name.toLowerCase();
+    }
+
+    public static void main(final String[] args) {
+        List<String> names = Arrays.asList("Brad", "Kate", "Kim", "Jack", "Joe", "Mike", "Susan", "George", "Robert", "Julia", "Parker", "Benson");
     }
 }
