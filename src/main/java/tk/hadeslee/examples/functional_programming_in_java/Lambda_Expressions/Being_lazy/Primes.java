@@ -1,9 +1,8 @@
 package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.Being_lazy;
 
-import static java.util.stream.Collectors.toList;
-
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -16,6 +15,12 @@ import java.util.stream.Stream;
  * To change this template use File | Settings | File Templates.
  */
 public class Primes {
+    public static boolean isPrime(final int number) {
+        return number > 1 &&
+                IntStream.rangeClosed(2, (int) Math.sqrt(number))
+                        .noneMatch(divisor -> number % divisor == 0);
+    }
+
     private static int primeAgter(final int number) {
         if (isPrime(number + 1)) {
             return number + 1;
