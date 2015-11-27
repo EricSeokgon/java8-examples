@@ -30,8 +30,13 @@ public class Primes {
 
     }
 
-    public static List<Integer> ptimes(final int fromNumber, final int count) {
+    public static List<Integer> primes(final int fromNumber, final int count) {
         return Stream.iterate(primeAgter(fromNumber - 1), Primes::primeAgter)
                 .limit(count).collect(Collectors.<Integer>toList());
+    }
+
+    public static void main(String[] args) {
+        System.out.println("10 primes from 1: " + primes(1, 10));
+        System.out.println("5 primes from 100: " + primes(100, 5));
     }
 }
