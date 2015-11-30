@@ -10,6 +10,9 @@ package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.O
  * To change this template use File | Settings | File Templates.
  */
 public class TailCalls {
+    public static <T> TailCall<T> call(final TailCall<T> nextCall){
+        return nextCall;
+    }
     public static <T> TailCall<T> done(final T value){
         return new TailCall<T>() {
             @Override public boolean isComplete() { return true; }

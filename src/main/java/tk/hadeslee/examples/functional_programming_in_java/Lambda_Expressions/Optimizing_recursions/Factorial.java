@@ -1,5 +1,8 @@
 package tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.Optimizing_recursions;
 
+import static tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.Optimizing_recursions.TailCalls.call;
+import static tk.hadeslee.examples.functional_programming_in_java.Lambda_Expressions.Optimizing_recursions.TailCalls.done;
+
 /**
  * Project: java8-examples
  * FileName: Factorial
@@ -23,6 +26,14 @@ public class Factorial {
             System.out.println(factorialRec(20000));
         } catch (StackOverflowError ex) {
             System.out.println(ex);
+        }
+    }
+
+    public static TailCall<Integer> factorialTailRec(final int factorial, final int number){
+        if (number == 1) {
+            return done(factorial);
+        } else {
+            return call(()->factorialTailRec(factorial*number, number-1));
         }
     }
 }
