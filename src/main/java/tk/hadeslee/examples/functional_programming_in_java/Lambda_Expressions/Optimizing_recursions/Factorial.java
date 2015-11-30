@@ -23,17 +23,28 @@ public class Factorial {
 
     public static void main(String[] args) {
         try {
-            System.out.println(factorialRec(20000));
+            System.out.println(factorialRec(5));
+            //System.out.println(factorialRec(20000));
+            System.out.println(factorialTailRec(1, 2).invoke());
+            System.out.println(factorialTailRec(1, 5).invoke());
+            System.out.println(factorialTailRec(1, 20000).invoke());
+            System.out.println(factorial(5));
+            System.out.println(factorial(20000));
         } catch (StackOverflowError ex) {
             System.out.println(ex);
         }
     }
 
-    public static TailCall<Integer> factorialTailRec(final int factorial, final int number){
+    public static TailCall<Integer> factorialTailRec(final int factorial, final int number) {
         if (number == 1) {
             return done(factorial);
         } else {
-            return call(()->factorialTailRec(factorial*number, number-1));
+            return call(() -> factorialTailRec(factorial * number, number - 1));
         }
     }
+
+    public static int factorial(final int number) {
+        return factorialTailRec(1, number).invoke();
+    }
+
 }
