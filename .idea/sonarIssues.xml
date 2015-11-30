@@ -78,6 +78,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/tk/hadeslee/examples/functional_programming_in_java/Lambda_Expressions/Optimizing_recursions/TailCalls.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/tk/hadeslee/examples/functional_programming_in_java/Lambda_Expressions/Working_with_Resources/FileWriterARM.java">
           <value>
             <set />
