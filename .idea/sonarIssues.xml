@@ -68,6 +68,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/tk/hadeslee/examples/functional_programming_in_java/Lambda_Expressions/Optimizing_recursions/BigFactorial.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/tk/hadeslee/examples/functional_programming_in_java/Lambda_Expressions/Optimizing_recursions/Factorial.java">
           <value>
             <set />
