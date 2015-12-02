@@ -55,7 +55,7 @@ public class TyrantTest {
 
         private void open() throws IOException {
             //socket = new Socket("127.0.0.1", 88);
-            socket = new Socket("172.168.1.114", 88);
+            socket = new Socket("localhost", 1978);
             writer = new DataOutputStream(socket.getOutputStream());
             reader = socket.getInputStream();
         }
