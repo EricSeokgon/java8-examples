@@ -26,7 +26,10 @@ public class TyrantTest {
 //        t.put("key", "value");
 //        assertThat(t.get("key"), is("value"));
 
-        new TyrantMap().put();
+        TyrantMap tyrantMap = new TyrantMap();
+        tyrantMap.open();
+        tyrantMap.put("key", "value");
+        tyrantMap.close();
 
     }
 
@@ -38,21 +41,31 @@ public class TyrantTest {
         private DataOutputStream writer;
         private InputStream reader;
 
-        public void put() throws IOException {
-            String key = "key";
-            String value = "value";
+        public void put(String key, String value) throws IOException {
 
-            socket = new Socket("127.0.0.1", 1978);
-            writer = new DataOutputStream(socket.getOutputStream());
             writer.write(OPERATION_PREFIX);
             writer.write(OPERATION_PUT);
             writer.writeInt(key.length());
             writer.writeInt(value.length());
             writer.write(key.getBytes()); //key
             writer.write(value.getBytes()); //value
-            reader = socket.getInputStream();
             int status = reader.read();
             assertThat(status, is(1));
+        }
+
+        private void open() throws IOException {
+            //socket = new Socket("127.0.0.1", 88);
+            socket = new Socket("172.168.1.114", 88);
+            writer = new DataOutputStream(socket.getOutputStream());
+            reader = socket.getInputStream();
+        }
+
+        public void close() throws IOException {
+            try {
+                socket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
