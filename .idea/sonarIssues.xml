@@ -8,6 +8,11 @@
             <set />
           </value>
         </entry>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/peekaboo.txt">
           <value>
             <set />
@@ -159,6 +164,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/test/java/RodCutterTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/movie/MovieTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/tk/hadeslee/junit/CalculatorTest.java">
           <value>
             <set />
           </value>
