@@ -10,4 +10,7 @@ package movie;
  * To change this template use File | Settings | File Templates.
  */
 public class Movie {
+    public Integer averageRating() {
+        return 0;
+    }
 }

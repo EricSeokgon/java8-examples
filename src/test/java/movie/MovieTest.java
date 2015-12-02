@@ -1,5 +1,8 @@
 package movie;
 
+
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 import org.junit.Test;
 
 /**
@@ -13,7 +16,8 @@ import org.junit.Test;
  */
 public class MovieTest {
     @Test
-    public void foo(){
+    public void canCreatMovie() {
         Movie movie = new Movie();
+        assertThat(movie.averageRating(), is(0));
     }
 }
