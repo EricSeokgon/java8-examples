@@ -6,7 +6,7 @@ package tk.hadeslee.junit;
  * Date: 2015-12-02
  * Time: 오후 1:46
  * Author: Hades Lee
- * Note:
+ * Note:2
  * To change this template use File | Settings | File Templates.
  */
 public class Calculator {
