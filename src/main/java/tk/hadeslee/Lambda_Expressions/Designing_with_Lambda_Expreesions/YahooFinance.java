@@ -25,11 +25,7 @@ public class YahooFinance {
             final String data = reader.lines().skip(1).findFirst().get();
             final String[] dataItems = data.split(",");
             return new BigDecimal(dataItems[dataItems.length - 1]);
-        } catch (
-                Exception ex
-                )
-
-        {
+        } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
     }
