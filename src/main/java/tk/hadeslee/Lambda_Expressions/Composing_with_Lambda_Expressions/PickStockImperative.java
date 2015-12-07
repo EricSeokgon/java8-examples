@@ -2,6 +2,7 @@ package tk.hadeslee.Lambda_Expressions.Composing_with_Lambda_Expressions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * Project: java8-examples
@@ -19,5 +20,15 @@ public class PickStockImperative {
         for (String symbol : Tickers.symbols) {
             stocks.add(StockUtil.getPrice(symbol));
         }
+
+        final List<StockInfo> stockPricedUnder500 = new ArrayList<>();
+        final Predicate<StockInfo> isPriceLessThan500 = StockUtil.isPriceLessThan(500);
+        for (StockInfo stock : stocks) {
+            if (isPriceLessThan500.test(stock))
+                stockPricedUnder500.add(stock);
+        }
+
     }
+
+
 }
