@@ -1,5 +1,6 @@
 package tk.hadeslee.Lambda_Expressions.Composing_with_Lambda_Expressions;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
@@ -27,6 +28,13 @@ public class PickStockImperative {
             if (isPriceLessThan500.test(stock))
                 stockPricedUnder500.add(stock);
         }
+
+        StockInfo highPriced = new StockInfo("", BigDecimal.ZERO);
+        for (StockInfo stock : stockPricedUnder500) {
+            highPriced = StockUtil.pickHigh(highPriced, stock);
+        }
+
+        System.out.println("High priced under $500 is " + highPriced);
 
     }
 
