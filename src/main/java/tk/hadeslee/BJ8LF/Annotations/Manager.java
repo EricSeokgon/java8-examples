@@ -14,4 +14,10 @@ public class Manager extends Employee {
     public void setSalary(int salary) {
         System.out.println("Menager.setSalary():" + salary);
     }
+
+    public static void main(String[] args) {
+        Employee ken = new Manager();
+        int salary = 200;
+        ken.setSalary(salary);
+    }
 }
