@@ -11,7 +11,8 @@ package tk.hadeslee.BJ8LF.Annotations;
  */
 public class Manager extends Employee {
     //    Override setSalary() in the Employee class
-    public void setSalary(int salary) {
+    @Override
+    public void setSalary(double salary) {
         System.out.println("Menager.setSalary():" + salary);
     }
 
