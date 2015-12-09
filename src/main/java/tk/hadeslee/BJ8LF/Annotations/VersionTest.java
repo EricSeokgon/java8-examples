@@ -31,5 +31,8 @@ public class VersionTest {
 
     @Version(major = 1, minor = 1)
     public void setXyz(int xyz) {
+        @Version(major = 1, minor = 2)
+        int newValue = xyz;
+        this.xyz = xyz;
     }
 }
