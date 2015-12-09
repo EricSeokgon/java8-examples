@@ -9,6 +9,8 @@ package tk.hadeslee.BJ8LF.Annotations;
  * Note:
  * To change this template use File | Settings | File Templates.
  */
-public @interface WrongVersion extends BasicVersion {
-    int extended();
+//Won't compile
+public @interface WrongVersion {
+    //Cannot have parameters
+    String concatenate(int major, int minor);
 }
