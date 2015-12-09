@@ -11,6 +11,7 @@ package tk.hadeslee.BJ8LF.Annotations;
  */
 //Won't compile
 public @interface WrongVersion {
-    //Cannot have parameters
-    String concatenate(int major, int minor);
+    int major() throws Exception; // Cannot have a throws clause
+
+    int minor(); // ok
 }
