@@ -11,7 +11,7 @@ package tk.hadeslee.BJ8LF.Annotations;
  */
 //Won't compile
 public @interface WrongVersion {
-    int major() throws Exception; // Cannot have a throws clause
+    //int major() throws Exception; // Cannot have a throws clause
 
     int minor(); // ok
 }

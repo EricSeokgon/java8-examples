@@ -11,5 +11,6 @@ package tk.hadeslee.BJ8LF.Annotations;
  */
 public @interface Version {
     int major();
-    int minor();
+
+    int minor() default 0;
 }
