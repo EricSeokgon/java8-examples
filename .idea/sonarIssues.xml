@@ -263,6 +263,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/tk/hadeslee/BJ8LF/Annotations/NameTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/test/java/tk/hadeslee/junit/CalculatorTest.java">
           <value>
             <set />
