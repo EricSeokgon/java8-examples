@@ -48,6 +48,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/tk/hadeslee/BJ8LF/innerraclasses/TitleList.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/tk/hadeslee/Lambda_Expressions/Composing_with_Lambda_Expressions/PickStockFunctional.java">
           <value>
             <set />
@@ -274,6 +279,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/test/java/tk/hadeslee/BJ8LF/Annotations/NameTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/tk/hadeslee/BJ8LF/innerraclasses/TitleListTest.java">
           <value>
             <set />
           </value>
