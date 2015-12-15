@@ -1,4 +1,4 @@
-package tk.hadeslee.BJ8LF.innerclasses;
+package tk.hadeslee.BJ8LF.innerraclasses;
 
 /**
  * Project: java8-examples
