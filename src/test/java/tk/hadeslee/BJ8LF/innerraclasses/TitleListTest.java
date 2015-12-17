@@ -1,7 +1,8 @@
 package tk.hadeslee.BJ8LF.innerraclasses;
 
 import junit.framework.TestCase;
-import org.junit.Test;
+
+import java.util.Iterator;
 
 /**
  * Project: java8-examples
@@ -14,18 +15,19 @@ import org.junit.Test;
  */
 public class TitleListTest extends TestCase {
 
-    @Test
-    public void testAddTitle() throws Exception {
+    public static void main(String[] args) {
+        TitleList tl = new TitleList();
 
-    }
+        //Add two titles
+        tl.addTitle("Beginning Java 8");
+        tl.addTitle("Scripting in Java");
 
-    @Test
-    public void testRemoveTitle() throws Exception {
+        //Get the iterator
+        Iterator iterator = tl.titleIterator();
 
-    }
-
-    @Test
-    public void testTitleIterator() throws Exception {
-
+        //Ptint all titles using the iterator
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
     }
 }
