@@ -40,4 +40,19 @@ public class titleListWithInnerClass {
         };//Anonymous inner class end here
         return iterator;
     }
+
+    public RandomInteger getRandomInteger() {
+        //Anoymous inner class that inherits the RandomInteger class
+        return new RandomInteger() {
+            public int getValue() {
+                //Get two random integers and return
+                //the average ignoring the faction part
+                long n1 = rand.nextInt();
+                long n2 = rand.nextInt();
+
+                int value = (int) ((n1 + n2) / 2);
+                return value;
+            }
+        };
+    }
 }
