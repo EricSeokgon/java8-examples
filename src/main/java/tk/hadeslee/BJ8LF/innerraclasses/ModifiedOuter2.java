@@ -21,7 +21,7 @@ public class ModifiedOuter2 {
         public void printValue() {
             System.out.println("\nInner - printValue()...");
             System.out.println("Inner: Value = " + value);
-            //System.out.println("Outer: Value = " + ModifiedOuter2.value);
+            System.out.println("Outer: Value = " + ModifiedOuter2.this.value);
         }
     } //Inner class ends here
 
