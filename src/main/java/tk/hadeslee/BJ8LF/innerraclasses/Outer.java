@@ -15,13 +15,13 @@ public class Outer {
     //Inner class starts here
     public class Inner {
         public void printValue() {
-            System.out.println("Inner: Value =" + value);
+            System.out.println("Inner: Value = " + value);
         } //Inner class ends here
     }
 
     //Instance method for the Outer class
     public void printValue() {
-        System.out.println("outer : Value =" + value);
+        System.out.println("outer : Value = " + value);
     }
 
     //Another instance method for the Outer class
