@@ -16,13 +16,13 @@ public class InvokeMethodTest {
     public static void main(String[] args) {
         Class<Person> personClass = Person.class;
         try {
-// Create an object of Person class
+            // Create an object of Person class
             Person p = personClass.newInstance();
             System.out.println(p);
-// Get the reference of teh setName() method
+            // Get the reference of teh setName() method
             Method setName = personClass.getMethod("setName", String.class);
-// Invoke the setName() method on p passing
-// a new value for name as "Ann"
+            // Invoke the setName() method on p passing
+            // a new value for name as "Ann"
             setName.invoke(p, "Ann");
             System.out.println(p);
         } catch (InstantiationException | IllegalAccessException |
