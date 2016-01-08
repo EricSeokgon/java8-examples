@@ -1,6 +1,6 @@
 package tk.hadeslee.BJ8LF.Annotations;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 /**
  * Project: java8-examples
