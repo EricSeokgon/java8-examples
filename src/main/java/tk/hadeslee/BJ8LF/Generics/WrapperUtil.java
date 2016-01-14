@@ -10,7 +10,14 @@ package tk.hadeslee.BJ8LF.Generics;
  * To change this template use File | Settings | File Templates.
  */
 public class WrapperUtil {
-    public static void printDetails(Wrapper<Object> wrapper) {
-// More code goes here
+    public static void printDetails(Wrapper<?> wrapper) {
+// Can assign get() return value to Object
+        Object value = wrapper.get();
+        String className = null;
+        if (value != null) {
+            className = value.getClass().getName();
+        }
+        System.out.println("Class: " + className);
+        System.out.println("Value: " + value);
     }
 }
