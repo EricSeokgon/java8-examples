@@ -12,4 +12,5 @@ package tk.hadeslee.BJ8LF.Lambda_Expressions;
 @FunctionalInterface
 public interface Joiner {
     String join(String s1, String s2);
+
 }
